@@ -1,12 +1,14 @@
 ---
 name: sandsquircle
-description: Implement, scaffold, or redesign web apps, dashboards, PWAs, and mobile APKs using the SandSquircle UI design system (Warm Sand & Charcoal Soft-Squircle aesthetic). Use whenever the user mentions SandSquircle, DueWise UI, warm sand theme, soft-squircle cards, or asks to redesign an interface into a minimalist daylight aesthetic.
-version: 1.0.0
+description: Implement, scaffold, or redesign web apps, dashboards, PWAs, mobile APKs, iOS apps, and desktop interfaces using the SandSquircle UI design system (Warm Sand & Charcoal Soft-Squircle aesthetic). Use whenever the user mentions SandSquircle, DueWise UI, warm sand theme, soft-squircle cards, or asks to redesign an interface into a minimalist daylight aesthetic across WebUI, Mobile Apps (Compose, SwiftUI, React Native, Flutter), or Desktop Apps.
+version: 1.1.0
 ---
 
 # SandSquircle UI Design System
 
-A minimalist, high-contrast, daylight-first design system crafted for mobile-first web applications, PWAs, fintech dashboards, and Android APKs. SandSquircle combines warm organic sand canvases, high-contrast charcoal typography, diffused ambient shadows, and organic squircle geometry.
+A minimalist, high-contrast, daylight-first design system crafted for **WebUI** (React, Next.js, Vue, Svelte, Tailwind, Vanilla HTML), **Mobile Apps** (Android Jetpack Compose, iOS SwiftUI, React Native/Expo, Flutter), and **Desktop & Enterprise Web Applications** (Electron, Tauri, multi-column dashboards).
+
+SandSquircle pairs warm organic sand canvases, high-contrast charcoal typography, diffused ambient shadows, and organic squircle geometry.
 
 ---
 
@@ -17,8 +19,8 @@ A minimalist, high-contrast, daylight-first design system crafted for mobile-fir
    - Always set the canvas/screen background to Warm Sand: `bg-sand-100` (`#F8F6F2`).
    - This ensures crisp `#FFFFFF` cards, floating pill docks, and surface containers float naturally with organic depth rather than blending into an unstyled void.
 
-2. **Mobile-First Responsive App Shell**:
-   - Default layout wrapper:
+2. **Responsive Shell Hierarchy**:
+   - **Mobile-First App & PWA Shell**: Centered container with bottom padding for pill docks:
      ```html
      <div class="min-h-screen bg-sand-100 text-charcoal-900 font-sans antialiased">
        <main class="w-full max-w-[460px] min-h-screen px-4 pb-28 mx-auto flex flex-col">
@@ -26,7 +28,7 @@ A minimalist, high-contrast, daylight-first design system crafted for mobile-fir
        </main>
      </div>
      ```
-   - For wide multi-column desktop dashboards, retain the `bg-sand-100` canvas and `rounded-[26px]` card geometry while expanding to an adaptive 2-to-3 column grid (`max-w-6xl` or `max-w-7xl mx-auto px-6`).
+   - **Desktop Web Apps & Enterprise Dashboards**: Retain the `bg-sand-100` canvas and `rounded-[26px]` card geometry, pairing a collapsible squircle sidebar navigation with an adaptive 12-column grid (`max-w-7xl mx-auto px-6 py-8`).
 
 3. **Ultra-Diffused Elevation & Hairline Borders**:
    - Every floating card uses:
@@ -85,8 +87,6 @@ A minimalist, high-contrast, daylight-first design system crafted for mobile-fir
 SandSquircle uses **Plus Jakarta Sans** for modern, crisp readability:
 
 ```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
 
@@ -104,8 +104,6 @@ SandSquircle uses **Plus Jakarta Sans** for modern, crisp readability:
 
 ## 4. Corner Radius Hierarchy
 
-Consistent squircle curvature establishes the physical layer hierarchy:
-
 | Surface Level | Radius | Tailwind Class | Example Component |
 | :--- | :--- | :--- | :--- |
 | **Modals & Bottom Sheets** | 32px | `rounded-[32px]` | Dialogs, Quick Action sheets |
@@ -119,70 +117,40 @@ Consistent squircle curvature establishes the physical layer hierarchy:
 
 ---
 
-## 5. Signature Component Patterns
+## 5. Project Adaptation Workflows
 
-### 1. Top Bar (`SandSquircleTopBar`)
-- Left: 22% squircle brand icon (`w-10 h-10 bg-charcoal-900 text-sand-50 rounded-[22%]`).
-- Center: Teal uppercase overline (`text-[10px] font-bold text-teal-600 tracking-widest uppercase`) + Bold greeting (`text-lg font-extrabold text-charcoal-900`).
-- Right: Circular white action buttons with hairline border (`w-10 h-10 rounded-full bg-white shadow-soft-card border border-black/[0.03]`) + pinging notification dot.
+Depending on the target project stack, instruct the agent to inspect the relevant reference:
 
-### 2. Light Balance Hero Card (`SandSquircleHeroCard`)
-- `bg-white rounded-[26px] p-6 shadow-soft-card border border-black/[0.03]`.
-- Top: Overline ("TOTAL NET POSITION") with Privacy Eye toggle button.
-- Center: Hero metric (`$48,290.00` or `••••••••` masked state).
-- Bottom: 2-column semantic split mini-cards (`emeraldMint` Receivable vs `crimsonCoral` Payable) with 22px squircle geometry.
+### Tier 1: Modern WebUI (React, Next.js, Vue, Svelte, Tailwind v3/v4)
+1. Import configuration from [`references/tailwind.config.js`](file:///references/tailwind.config.js).
+2. Copy or adapt production components from [`references/component-recipes.tsx`](file:///references/component-recipes.tsx) (`SandSquircleTopBar`, `SandSquircleHeroCard`, `SandSquircleFloatingDock`, `SandSquircleModal`).
 
-### 3. Dark Gradient Analytics Card (`SandSquircleDarkHeroCard`)
-- `bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-[#0B0F19] text-white rounded-[28px] p-6 shadow-xl border border-white/10`.
-- Top: Subtle white/10 frosted badge ("MONTHLY CASH RUNWAY").
-- Center: White bold metric + positive percentage pill (`bg-emerald-500/20 text-emerald-300`).
-- Bottom: Frosted glass sub-metrics in `bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10`.
+### Tier 2: Vanilla Web & Non-Tailwind Stacks (HTML, HTMX, Svelte, Django, Rails, PHP)
+1. Include [`references/sandsquircle-tokens.css`](file:///references/sandsquircle-tokens.css) in your document `<head>`.
+2. Apply pre-built classes: `.ss-shell`, `.ss-card`, `.ss-card-dark`, `.ss-pill-dock`, `.ss-fab`, `.ss-input`, `.ss-btn-primary`, and `.ss-badge-paid`.
 
-### 4. 5-Column Quick Action Category Grid (`SandSquircleCategoryGrid`)
-- Horizontal flex or 5-column grid (`grid grid-cols-5 gap-2 sm:gap-3`).
-- Each item: `w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-soft-card border border-black/[0.03] flex items-center justify-center transition-transform hover:scale-105 active:scale-95`.
-- Label underneath: `text-[11px] font-bold text-charcoal-700 text-center tracking-tight`.
+### Tier 3: Mobile Apps (Native & Cross-Platform)
+1. **Android Jetpack Compose**:
+   - Import [`references/ComposeTheme.kt`](file:///references/ComposeTheme.kt).
+   - Wrap composables in `SandSquircleTheme { ... }` and use `Modifier.sandSquircleCard()`.
+2. **iOS Native (SwiftUI)**:
+   - Import [`references/SandSquircleTheme.swift`](file:///references/SandSquircleTheme.swift).
+   - Use `SandSquircle.Colors.*` and `.sandSquircleCard()` with continuous squircle curvature.
+3. **React Native & Expo**:
+   - Import [`references/ReactNativeTheme.ts`](file:///references/ReactNativeTheme.ts).
+   - Use `SandSquircleStyles.card`, `SandSquircleStyles.pillDock`, and `PressableScale`.
+4. **Flutter (Material 3)**:
+   - Import [`references/sand_squircle_theme.dart`](file:///references/sand_squircle_theme.dart).
+   - Set `theme: sandSquircleThemeData` and wrap items with `SandSquircleCard(child: ...)`.
 
-### 5. Transaction List Row (`SandSquircleListRow`)
-- `bg-white rounded-2xl p-4 shadow-soft-card border border-black/[0.03] flex items-center justify-between transition-transform active:scale-[0.99]`.
-- Left: 16px squircle icon with soft background tint (`bg-sand-100` or `bg-teal-50`).
-- Center: Title (`text-sm font-bold text-charcoal-900`) + Subtitle/Date (`text-xs text-charcoal-500`).
-- Right: Amount (`text-sm font-extrabold`) + Status pill badge (`SandSquircleStatusBadge`).
-
-### 6. Floating Pill Dock (`SandSquircleFloatingDock`)
-- Positioned fixed at bottom center: `fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[420px] z-40`.
-- Shell: `bg-white/95 backdrop-blur-md rounded-full px-5 py-3 shadow-pill-dock border border-black/[0.04] flex items-center justify-between`.
-- Center FAB: `-mt-5 w-12 h-12 rounded-full bg-charcoal-900 text-white shadow-elevated-fab ring-4 ring-sand-100 flex items-center justify-center transition-transform hover:scale-105 active:scale-95`.
-- 4 Navigation Tabs: 2 left of FAB, 2 right of FAB. Active tab uses `text-teal-600 bg-teal-50/80 rounded-full px-3 py-1.5`.
-
-### 7. Quick Action Modal / Bottom Sheet (`SandSquircleModal`)
-- Outer backdrop: `fixed inset-0 bg-charcoal-900/40 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-0 sm:p-4`.
-- Dialog container: `bg-white w-full max-w-lg rounded-t-[32px] sm:rounded-[32px] p-6 shadow-modal-sheet border border-black/[0.04]`.
-- Top: Pill drag indicator (`w-12 h-1.5 bg-charcoal-200 rounded-full mx-auto mb-4`).
-- Inputs: `bg-sand-50 rounded-2xl border border-sand-300 px-4 py-3 text-sm focus:ring-2 focus:ring-charcoal-900 focus:bg-white`.
-- Primary CTA: `w-full bg-charcoal-900 text-sand-50 py-3.5 rounded-2xl font-bold text-sm shadow-md hover:bg-charcoal-800 active:scale-[0.98]`.
+### Tier 4: Desktop Web Apps & Enterprise Dashboards (Electron, Tauri, Multi-Column)
+1. Use `SandSquircleDesktopShell` from [`references/component-recipes.tsx`](file:///references/component-recipes.tsx).
+2. Arrange analytics in `SandSquircleStatGrid` (4-column responsive grid).
+3. Universal tokens for design handoff are available in W3C DTCG format at [`references/tokens.json`](file:///references/tokens.json).
 
 ---
 
-## 6. Implementation Workflow & Reference Files
-
-When building or refactoring interfaces into SandSquircle, inspect these reference files:
-
-1. **Tailwind Projects (React, Next.js, Vite, Vue)**:
-   - Load tokens from [`references/tailwind.config.js`](file:///references/tailwind.config.js).
-   - Copy or adapt components from [`references/component-recipes.tsx`](file:///references/component-recipes.tsx).
-2. **Vanilla / Non-Tailwind Web Apps (HTML, HTMX, Svelte, Go, Rails)**:
-   - Include [`references/sandsquircle-tokens.css`](file:///references/sandsquircle-tokens.css) in your `<head>`.
-   - Use pre-built `.ss-shell`, `.ss-card`, `.ss-pill-dock`, and `.ss-fab` utility classes.
-3. **Android Jetpack Compose APKs**:
-   - Import [`references/ComposeTheme.kt`](file:///references/ComposeTheme.kt) into your Android app package.
-   - Wrap screens with `SandSquircleTheme { ... }` and use `Modifier.sandSquircleCard()`.
-4. **Interactive Sandbox Preview**:
-   - Inspect and open [`examples/demo-preview.html`](file:///examples/demo-preview.html) for a complete working implementation.
-
----
-
-## 7. Anti-Patterns to Avoid
+## 6. Anti-Patterns to Avoid
 
 | Anti-Pattern | Why It Breaks the System | Correct Alternative |
 | :--- | :--- | :--- |

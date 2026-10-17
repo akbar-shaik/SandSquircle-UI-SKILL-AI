@@ -7,7 +7,7 @@
 set -euo pipefail
 
 SKILL_NAME="sandsquircle"
-REPO_URL="https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git"
+REPO_URL="https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git"
 
 # Color formatting
 GREEN="\033[0;32m"

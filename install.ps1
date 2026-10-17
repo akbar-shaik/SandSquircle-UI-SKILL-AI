@@ -12,7 +12,7 @@ param (
 $ErrorActionPreference = "Stop"
 
 $SkillName = "sandsquircle"
-$RepoUrl = "https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git"
+$RepoUrl = "https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git"
 
 Write-Host "  ___                 _ ____                    _      " -ForegroundColor DarkYellow
 Write-Host " / ___|  __ _ _ __   __| / ___|  __ _ _   _ _ __ (_)_ __ " -ForegroundColor DarkYellow

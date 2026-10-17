@@ -1,120 +1,148 @@
 # SandSquircle UI — AI Agent Skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Multi-Platform](https://img.shields.io/badge/Platform-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf-teal)](https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI)
-[![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Tailwind%20%7C%20Jetpack%20Compose%20%7C%20CSS-charcoal?color=111827)](https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI)
-[![Aesthetic](https://img.shields.io/badge/Aesthetic-Warm%20Sand%20%26%20Soft--Squircle-F8F6F2?color=EAE2D8&labelColor=111827)](https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI)
+[![Multi-Platform](https://img.shields.io/badge/Platform-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf-teal)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
+[![Stack](https://img.shields.io/badge/Ecosystem-WebUI%20%7C%20Android%20%7C%20iOS%20%7C%20React%20Native%20%7C%20Flutter-charcoal?color=111827)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
+[![Aesthetic](https://img.shields.io/badge/Aesthetic-Warm%20Sand%20%26%20Soft--Squircle-F8F6F2?color=EAE2D8&labelColor=111827)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
 
-> **Universal, installable AI Agent Skill for designing, scaffolding, and refactoring web apps, PWAs, fintech dashboards, and Android APKs into the SandSquircle design system.**
+> **Universal, installable AI Agent Skill enabling any AI coding assistant to design, scaffold, and refactor WebUI, Mobile Apps, and Desktop Applications into the signature SandSquircle design system.**
 
 ---
 
-## 🎨 Design System Philosophy
+## 📸 Visual Showcase
 
-**SandSquircle** is a daylight-first, high-contrast interface design system inspired by organic tactile physical cards resting on a warm earthen canvas.
+<p align="center">
+  <img src="assets/preview-mobile.png" width="340" alt="SandSquircle Mobile App Shell" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/preview-modal.png" width="340" alt="SandSquircle 32px Squircle Modal" />
+</p>
 
-### The 4 Cardinal Rules of SandSquircle
+<p align="center">
+  <img src="assets/preview-desktop.png" width="720" alt="SandSquircle Desktop & Web App Canvas" />
+</p>
 
-1. **Warm Daylight Canvas (`#F8F6F2`)**: **Never** use pure `#FFFFFF` for the page background. The screen canvas is always Warm Sand (`sand-100`), allowing crisp white cards and floating pill docks to sit with natural optical depth.
-2. **Mobile-First App Shell**: Designed natively for hand-held tactile interfaces (`max-w-[460px] pb-28 mx-auto`), while expanding symmetrically for multi-column desktop command centers.
+---
+
+## 🎨 Design Philosophy & Cardinal Rules
+
+**SandSquircle** is a daylight-first, high-contrast interface design system inspired by tactile physical cards floating on a warm earthen foundation.
+
+1. **Warm Daylight Canvas (`#F8F6F2`)**: **Never** use pure `#FFFFFF` for the viewport background. The screen canvas is always Warm Sand (`sand-100`), allowing crisp white cards and floating pill docks to sit with natural optical depth.
+2. **Omni-Platform Responsive Shell**:
+   - **Mobile Web & PWAs**: Centered handheld container (`max-w-[460px] pb-28 mx-auto`) with bottom pill dock navigation.
+   - **Desktop Web Apps & Admin Dashboards**: Expands seamlessly to a multi-column enterprise layout with squircle sidebar navigation and responsive stat grids.
+   - **Native Mobile Apps**: Native view containers with continuous squircle curvature for Android, iOS, React Native, and Flutter.
 3. **Ultra-Diffused Elevation & Hairline Borders**: Every white surface uses `rounded-[26px]`, ambient shadow `0 10px 30px -4px rgba(0, 0, 0, 0.04)`, and a 1px `border-black/[0.03]` hairline border. Never use heavy gray borders or harsh drop shadows.
-4. **High-Contrast Interactive Hierarchy**: Deep Charcoal (`#111827`) provides decisive authority for hero typography, dark gradient analytics cards, and primary CTAs, accented with vibrant Teal (`#0D9488`) for active navigation.
+4. **High-Contrast Interactive Hierarchy**: Deep Charcoal (`#111827`) provides decisive authority for headings, hero cards, and primary CTAs, accented with vibrant Teal (`#0D9488`) for active navigation states.
 
 ---
 
-## ⚡ 1-Line Quick Installation
+## ⚡ 1-Line Installation for All Major AI Agents
 
-### Antigravity IDE (Global Installation)
+### 1. Google Antigravity IDE
 
-**Linux / macOS (Terminal):**
-```bash
-curl -fsSL https://raw.githubusercontent.com/Repinkindia/SandSquircle-UI-SKILL-AI/main/install.sh | bash
-```
-
-**Windows (PowerShell):**
-```powershell
-irm https://raw.githubusercontent.com/Repinkindia/SandSquircle-UI-SKILL-AI/main/install.ps1 | iex
-```
-
-*Or via direct git clone into your Antigravity skills directory:*
+**Global Installation (All Workspaces):**
 ```bash
 # Linux / macOS:
-git clone https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git ~/.gemini/antigravity/skills/sandsquircle
+curl -fsSL https://raw.githubusercontent.com/akbar-shaik/SandSquircle-UI-SKILL-AI/main/install.sh | bash
 
-# Windows:
-git clone https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git "$env:USERPROFILE\.gemini\antigravity\skills\sandsquircle"
+# Windows PowerShell:
+irm https://raw.githubusercontent.com/akbar-shaik/SandSquircle-UI-SKILL-AI/main/install.ps1 | iex
 ```
 
----
-
-### Project-Scoped Installation (For specific repos)
-
-Install directly into `.agent/skills/sandsquircle` inside your active project:
-
-**Linux / macOS:**
+*Or via direct git clone:*
 ```bash
-git clone https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git .agent/skills/sandsquircle
+git clone https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git ~/.gemini/antigravity/skills/sandsquircle
 ```
 
-**Windows:**
-```powershell
-git clone https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git .agent\skills\sandsquircle
-```
-
----
-
-### Claude Code (`claude-code`)
-
-Clone directly into your Claude Code skills or personal instructions root:
+**Project-Level Installation (Current Workspace Only):**
 ```bash
-git clone https://github.com/Repinkindia/SandSquircle-UI-SKILL-AI.git ~/.claude/skills/sandsquircle
+# Linux / macOS:
+./install.sh --local
+
+# Windows PowerShell:
+.\install.ps1 -Local
 ```
 
 ---
 
-### Cursor & Windsurf
+### 2. Claude Code (`claude-code`)
 
-Symlink or copy `SKILL.md` into your rules directory:
+Clone directly into your personal Claude Code skills directory:
+```bash
+git clone https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git ~/.claude/skills/sandsquircle
+```
+*Or add to your project's `CLAUDE.md`:*
+```markdown
+## Design System
+Follow the SandSquircle UI skill instructions in `.agent/skills/sandsquircle/SKILL.md`.
+Always use Warm Sand (#F8F6F2) background, 26px soft-squircle cards, and Charcoal (#111827) typography.
+```
+
+---
+
+### 3. Cursor & Cursor Cloud Agents
+
+Add SandSquircle as a project rule:
 ```bash
 mkdir -p .cursor/rules
-curl -fsSL https://raw.githubusercontent.com/Repinkindia/SandSquircle-UI-SKILL-AI/main/SKILL.md -o .cursor/rules/sandsquircle.mdc
+curl -fsSL https://raw.githubusercontent.com/akbar-shaik/SandSquircle-UI-SKILL-AI/main/SKILL.md -o .cursor/rules/sandsquircle.mdc
 ```
+Cursor automatically discovers and activates the skill whenever you mention UI redesigns, cards, or SandSquircle.
+
+---
+
+### 4. Windsurf
+
+Add SandSquircle to your project rules:
+```bash
+curl -fsSL https://raw.githubusercontent.com/akbar-shaik/SandSquircle-UI-SKILL-AI/main/SKILL.md >> .windsurfrules
+```
+
+---
+
+### 5. GitHub Copilot, Cline, Roo Code & Aider
+
+Clone the skill into your project root:
+```bash
+git clone https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git .agent/skills/sandsquircle
+```
+Then instruct the agent:
+> *"Read `.agent/skills/sandsquircle/SKILL.md` and use the SandSquircle UI design system for this task."*
+
+---
+
+## 📱 Multi-Platform Architecture
+
+| Target Platform | Technology | Reference Implementation |
+| :--- | :--- | :--- |
+| **Modern WebUI** | React / Next.js / Vue / Svelte / Tailwind | [`references/tailwind.config.js`](references/tailwind.config.js) & [`references/component-recipes.tsx`](references/component-recipes.tsx) |
+| **Vanilla Web** | HTML / HTMX / PHP / Django / Rails | [`references/sandsquircle-tokens.css`](references/sandsquircle-tokens.css) |
+| **Android Native** | Kotlin / Jetpack Compose Material 3 | [`references/ComposeTheme.kt`](references/ComposeTheme.kt) |
+| **iOS Native** | Swift / SwiftUI (Continuous Squircles) | [`references/SandSquircleTheme.swift`](references/SandSquircleTheme.swift) |
+| **Cross-Platform Mobile** | React Native / Expo | [`references/ReactNativeTheme.ts`](references/ReactNativeTheme.ts) |
+| **Cross-Platform Mobile** | Flutter (Material 3 ThemeData) | [`references/sand_squircle_theme.dart`](references/sand_squircle_theme.dart) |
+| **Desktop Web & Enterprise** | Multi-Column Dashboard / Electron / Tauri | [`references/component-recipes.tsx`](references/component-recipes.tsx) (`SandSquircleDesktopShell`) |
+| **Universal Design Tokens** | W3C DTCG Format (Figma / Tools) | [`references/tokens.json`](references/tokens.json) |
 
 ---
 
 ## 🚀 Triggering the Skill in AI Prompts
 
-Once installed, simply prompt your AI coding assistant with natural triggers:
+Once installed, use natural language triggers with your AI assistant:
 
-- **Full Application Scaffolding**:
-  > *"Use the sandsquircle skill to scaffold a personal finance dashboard with TopBar, Hero balance card, category grid, and floating pill dock."*
-- **Interface Refactoring**:
-  > *"Refactor this generic white dashboard into the SandSquircle daylight aesthetic using warm sand canvas and 26px soft squircle cards."*
-- **Android Jetpack Compose**:
-  > *"Apply the SandSquircle ComposeTheme.kt and custom sandSquircleCard modifier to my Android home screen."*
-- **Component Recipes**:
-  > *"Generate a transaction list with Paid, Overdue, and Pending status badges following sandsquircle component recipes."*
+### WebUI & Single-Page Apps
+> *"Use the sandsquircle skill to design a fintech dashboard with TopBar, Light Hero Balance Card, and Floating Pill Dock in Next.js."*
 
----
+### Mobile Applications
+> *"Apply the SandSquircle SwiftUI theme from SandSquircleTheme.swift to my iOS banking app."*
+>
+> *"Refactor my Android home screen with ComposeTheme.kt and Modifier.sandSquircleCard()."*
+>
+> *"Scaffold a React Native screen using SandSquircleStyles and PressableScale."*
 
-## 🗂 Architecture & Repository Structure
-
-```text
-sandsquircle/
-├── SKILL.md                          # Universal skill specification & trigger instructions (<500 lines)
-├── README.md                         # Documentation, visual tokens, and setup instructions
-├── LICENSE                           # MIT License
-├── .gitignore                        # Universal multi-platform ignores
-├── install.sh                        # POSIX installer for Linux / macOS
-├── install.ps1                       # PowerShell installer for Windows
-├── references/
-│   ├── tailwind.config.js            # Tailwind v3 & v4 token definitions (colors, radii, shadows)
-│   ├── sandsquircle-tokens.css       # Standalone CSS custom properties & utility classes for vanilla/HTMX
-│   ├── ComposeTheme.kt               # Jetpack Compose Material3 theme, modifiers & system bars
-│   └── component-recipes.tsx         # Copy-pasteable React 18/19 TypeScript components
-└── examples/
-    └── demo-preview.html             # Zero-build standalone interactive HTML showcase
-```
+### Desktop Web Apps & Admin Dashboards
+> *"Scaffold an enterprise admin portal using the SandSquircleDesktopShell with collapsible sidebar and SandSquircleStatGrid."*
 
 ---
 
@@ -178,14 +206,13 @@ sandsquircle/
 
 ## 🖥 Interactive Preview
 
-To experience the design system live with working privacy toggles, tab filtering, and animated bottom-sheet modals:
-
-1. Clone or download this repository.
-2. Double-click or open `examples/demo-preview.html` in any web browser (Chrome, Edge, Safari, Firefox).
-3. No build tools or Node.js required—runs instantly via CDN!
+To run the interactive live preview:
+1. Double click [`examples/demo-preview.html`](examples/demo-preview.html) in any web browser.
+2. Experience live balance privacy toggling, category tabs, and animated bottom-sheet modals with zero build steps or npm installations.
 
 ---
 
 ## 📄 License
 
-Distributed under the [MIT License](LICENSE). Built for high-velocity software engineering and autonomous AI agent workflows.
+Distributed under the [MIT License](LICENSE).
+Built with passion for autonomous AI agents and high-velocity product teams.

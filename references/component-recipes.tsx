@@ -585,3 +585,130 @@ export const SandSquircleModal: React.FC<ModalProps> = ({
     </div>
   );
 };
+
+// ----------------------------------------------------------------------------
+// 8. SandSquircleDesktopShell (Wide Multi-Column Web Apps & Admin Dashboards)
+// Full-width desktop responsive shell with squircle sidebar & topbar.
+// ----------------------------------------------------------------------------
+export interface DesktopShellProps {
+  children: React.ReactNode;
+  activeNav?: string;
+  onNavClick?: (key: string) => void;
+}
+
+export const SandSquircleDesktopShell: React.FC<DesktopShellProps> = ({
+  children,
+  activeNav = 'dashboard',
+  onNavClick,
+}) => {
+  const navItems = [
+    { key: 'dashboard', label: 'Overview', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
+    { key: 'invoices', label: 'Invoices', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+    { key: 'analytics', label: 'Analytics', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+    { key: 'settings', label: 'Settings', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-sand-100 flex flex-col md:flex-row antialiased text-charcoal-900 font-sans">
+      {/* Desktop Sidebar Navigation */}
+      <aside className="w-full md:w-64 bg-white md:min-h-screen border-r border-black/[0.04] p-5 flex flex-col justify-between shadow-soft-card z-20">
+        <div>
+          {/* Brand Logo */}
+          <div className="flex items-center gap-3 mb-8 px-2">
+            <div className="w-10 h-10 bg-charcoal-900 rounded-[22%] flex items-center justify-center text-teal-500 shadow-sm">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <span className="block text-[10px] font-extrabold uppercase tracking-widest text-teal-600">SAND SQUIRCLE</span>
+              <span className="text-base font-extrabold text-charcoal-900 tracking-tight">Enterprise OS</span>
+            </div>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="space-y-1">
+            {navItems.map((item) => {
+              const isActive = activeNav === item.key;
+              return (
+                <button
+                  key={item.key}
+                  type="button"
+                  onClick={() => onNavClick?.(item.key)}
+                  className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-bold transition-all ${
+                    isActive
+                      ? 'bg-sand-100 text-charcoal-900 shadow-sm border border-sand-300'
+                      : 'text-charcoal-500 hover:text-charcoal-900 hover:bg-sand-50'
+                  }`}
+                >
+                  <svg className={`w-4 h-4 ${isActive ? 'text-teal-600' : 'text-charcoal-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                  </svg>
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* User Card */}
+        <div className="pt-4 border-t border-sand-200 mt-6 flex items-center gap-3 px-2">
+          <div className="w-9 h-9 rounded-full bg-sand-200 flex items-center justify-center font-bold text-xs text-charcoal-700">
+            AS
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-bold text-charcoal-900 truncate">Alex Shaikh</p>
+            <p className="text-[10px] text-charcoal-500 truncate">alex@enterprise.io</p>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="flex-1 p-6 md:p-8 max-w-7xl mx-auto w-full">
+        {children}
+      </main>
+    </div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// 9. SandSquircleStatGrid (Responsive 3-to-4 Column Metric Grid)
+// ----------------------------------------------------------------------------
+export interface StatItem {
+  label: string;
+  value: string;
+  change: string;
+  isPositive: boolean;
+}
+
+export const SandSquircleStatGrid: React.FC<{ stats: StatItem[] }> = ({ stats }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      {stats.map((stat, idx) => (
+        <div
+          key={idx}
+          className="bg-white rounded-[26px] p-5 shadow-soft-card border border-black/[0.03] transition-all hover:shadow-soft-card-hover"
+        >
+          <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-500 block mb-1">
+            {stat.label}
+          </span>
+          <div className="flex items-baseline justify-between">
+            <span className="text-2xl font-extrabold text-charcoal-900 tracking-tight">
+              {stat.value}
+            </span>
+            <span
+              className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                stat.isPositive
+                  ? 'text-emeraldMint-text bg-emeraldMint-bg border border-emeraldMint-border'
+                  : 'text-crimsonCoral-text bg-crimsonCoral-bg border border-crimsonCoral-border'
+              }`}
+            >
+              {stat.change}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
