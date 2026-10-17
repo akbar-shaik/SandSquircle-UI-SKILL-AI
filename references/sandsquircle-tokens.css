@@ -300,3 +300,61 @@ body {
 .ss-badge-partial .ss-badge-dot {
   background-color: var(--ss-amber-sand-text);
 }
+
+/* Circular Icon Action Button */
+.ss-btn-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--ss-radius-pill);
+  background-color: #FFFFFF;
+  box-shadow: var(--ss-shadow-soft-card);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: var(--ss-charcoal-700);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.ss-btn-circle:hover {
+  color: var(--ss-charcoal-900);
+  box-shadow: var(--ss-shadow-soft-card-hover);
+}
+
+.ss-btn-circle:active {
+  transform: scale(0.95);
+}
+
+/* 22% Squircle Brand/Category Icon */
+.ss-logo-squircle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--ss-radius-logo);
+  background-color: var(--ss-charcoal-900);
+  color: var(--ss-sand-50);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.1);
+  transition: transform 0.15s ease;
+}
+
+.ss-logo-squircle:active {
+  transform: scale(0.95);
+}
+
+/* Underline-Offset Text Link */
+.ss-link {
+  color: var(--ss-teal-600);
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease;
+}
+
+.ss-link:hover {
+  color: var(--ss-teal-700);
+  text-decoration: underline;
+}
+

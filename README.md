@@ -1,15 +1,15 @@
-# SandSquircle UI — AI Agent Skill
+# SandSquircle UI — AI Agent Style Skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Multi-Platform](https://img.shields.io/badge/Platform-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf-teal)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
 [![Stack](https://img.shields.io/badge/Ecosystem-WebUI%20%7C%20Android%20%7C%20iOS%20%7C%20React%20Native%20%7C%20Flutter-charcoal?color=111827)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
 [![Aesthetic](https://img.shields.io/badge/Aesthetic-Warm%20Sand%20%26%20Soft--Squircle-F8F6F2?color=EAE2D8&labelColor=111827)](https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI)
 
-> **Universal, installable AI Agent Skill enabling any AI coding assistant to design, scaffold, and refactor WebUI, Mobile Apps, and Desktop Applications into the signature SandSquircle design system.**
+> **Universal, installable AI Agent Skill enabling any AI coding assistant to extract and apply the SandSquircle UI style system (Buttons, Colors, Theme, Cards, and Subtle UI Components) across ANY application domain without copying the money-manager layout.**
 
 ---
 
-## 📸 Visual Showcase
+## 📸 Visual Style Showcase
 
 <p align="center">
   <img src="assets/preview-mobile.png" width="340" alt="SandSquircle Mobile App Shell" />
@@ -23,17 +23,81 @@
 
 ---
 
-## 🎨 Design Philosophy & Cardinal Rules
+## ⚠️ Core Directive for AI Agents: Style Extraction vs. Layout Copying
 
-**SandSquircle** is a daylight-first, high-contrast interface design system inspired by tactile physical cards floating on a warm earthen foundation.
+> [!IMPORTANT]
+> **The Money-Manager / Ledger Demo is an ILLUSTRATIVE STYLE SHOWCASE ONLY.**
+> **DO NOT** copy the money-manager layout (balance metric, receivable/payable split pills, ledger rows, transaction categories) for unrelated applications.
+>
+> **For different apps, different layouts must be created by AI.**
+> AI agents using this skill must extract and apply **ONLY** the 5 style pillars below, while creating custom, domain-specific layouts tailored to each individual app brief.
 
-1. **Warm Daylight Canvas (`#F8F6F2`)**: **Never** use pure `#FFFFFF` for the viewport background. The screen canvas is always Warm Sand (`sand-100`), allowing crisp white cards and floating pill docks to sit with natural optical depth.
-2. **Omni-Platform Responsive Shell**:
-   - **Mobile Web & PWAs**: Centered handheld container (`max-w-[460px] pb-28 mx-auto`) with bottom pill dock navigation.
-   - **Desktop Web Apps & Admin Dashboards**: Expands seamlessly to a multi-column enterprise layout with squircle sidebar navigation and responsive stat grids.
-   - **Native Mobile Apps**: Native view containers with continuous squircle curvature for Android, iOS, React Native, and Flutter.
-3. **Ultra-Diffused Elevation & Hairline Borders**: Every white surface uses `rounded-[26px]`, ambient shadow `0 10px 30px -4px rgba(0, 0, 0, 0.04)`, and a 1px `border-black/[0.03]` hairline border. Never use heavy gray borders or harsh drop shadows.
-4. **High-Contrast Interactive Hierarchy**: Deep Charcoal (`#111827`) provides decisive authority for headings, hero cards, and primary CTAs, accented with vibrant Teal (`#0D9488`) for active navigation states.
+---
+
+## 🎨 The 5 Core Style Pillars to Extract & Apply
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                      THE 5 SANDSQUIRCLE STYLE PILLARS                  │
+├─────────────────┬─────────────────┬──────────────────┬─────────────────┤
+│ 1. Button Style │ 2. Colors       │ 3. Theme         │ 4. Card Style   │
+│ Charcoal-900 &  │ Warm Sand #F8F6 │ Daylight Canvas, │ 26px Squircle,  │
+│ Teal CTAs, Fab, │ Charcoal Ink,   │ Hairline Borders,│ 28px Dark Hero, │
+│ 0.96x Spring    │ Semantic Pills  │ Plus Jakarta Sans│ Diffused Shadow │
+├─────────────────┴─────────────────┴──────────────────┴─────────────────┤
+│ 5. Subtle UI Components: 22% Squircle Icons, 6px Dot Status Badges,    │
+│    Underline-Offset Links, Frosted Glass Containers, Segmented Chips   │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### 1. Button Style
+- **Primary CTA**: Deep Charcoal (`#111827`) background with Warm Sand text (`#FBF9F6`), `rounded-2xl`, bold typography, subtle shadow, and tactile `active:scale-[0.98]` feedback.
+- **Secondary Action**: Brand Teal (`#0D9488` hover `#0F766E`) button with `rounded-2xl` and `active:scale-[0.98]`.
+- **Circular Action Trigger**: `w-10 h-10 rounded-full bg-white` with hairline border `border-black/[0.04]` and `active:scale-95`.
+- **Elevated FAB**: Charcoal-900 floating action circle with `shadow-elevated-fab` and `ring-4 ring-sand-100`.
+
+### 2. Colors
+- **Warm Sand Canvas Foundation**: `sand-50` (`#FBF9F6`), `sand-100` (`#F8F6F2` primary canvas), `sand-200` (`#F4EFEA`), `sand-300` (`#EAE2D8`), `sand-400` (`#D8CDC0`).
+- **Charcoal Ink Hierarchy**: `charcoal-900` (`#111827` primary ink), `charcoal-800` (`#1F2937`), `charcoal-700` (`#374151`), `charcoal-500` (`#6B7280`), `charcoal-400` (`#9CA3AF`), `charcoal-200` (`#E5E7EB`), `charcoal-100` (`#F3F4F6`).
+- **Brand Teal Accents**: `teal-600` (`#0D9488`), `teal-700` (`#0F766E`), `teal-50` (`#F0FDFA`).
+- **Semantic Status Pills**:
+  - `emeraldMint` (Positive / Active / Success): Text `#10B981`, BG `#ECFDF5`, Border `#D1FAE5`
+  - `crimsonCoral` (Negative / Danger / Inactive): Text `#EF4444`, BG `#FEF2F2`, Border `#FEE2E2`
+  - `amberSand` (Warning / Pending / Alert): Text `#F59E0B`, BG `#FFFBEB`, Border `#FEF3C7`
+
+### 3. Theme
+- **Warm Daylight Foundation**: **Never** use pure `#FFFFFF` for the page background. The screen canvas is always Warm Sand (`#F8F6F2`), allowing white cards to float with natural depth.
+- **Typography (Plus Jakarta Sans)**: Weights 400, 500, 600, 700, 800. Headings use negative letter spacing (`tracking-tight`).
+- **Diffused Soft Elevation**: Ambient shadow `0 10px 30px -4px rgba(0, 0, 0, 0.04)` (`shadow-soft-card`).
+- **Hairline Borders**: Crisp `1px solid rgba(0, 0, 0, 0.03)` on white surfaces; `rgba(255, 255, 255, 0.1)` on dark surfaces.
+
+### 4. Card Style
+- **Primary White Cards**: `rounded-[26px]` continuous squircle, white background, soft shadow, hairline border.
+- **Dark Gradient Hero Cards**: `rounded-[28px]` squircle with gradient `from-charcoal-900 to-charcoal-800`, white text, and frosted sub-boxes.
+- **Dialogs & Bottom Sheets**: `rounded-[32px]` squircle with backdrop blur.
+- **Mini Sub-Cards**: `rounded-[22px]`.
+- **Row Items / List Containers**: `rounded-2xl` (16px).
+
+### 5. Other UI Subtle Components
+- **Squircle Logo / Icon Badges**: `rounded-[22%]` (or 22% squircle), Charcoal-900 background with Teal or Sand glyph.
+- **Status Badges with 6px Dot**: `rounded-full` pill with a 6px status dot.
+- **Underline-Offset Links**: `text-teal-600 hover:text-teal-700 font-semibold underline-offset-4 hover:underline`.
+- **Form Inputs**: `bg-sand-50 border border-sand-300 rounded-2xl px-4 py-3 text-sm focus:ring-2 focus:ring-charcoal-900 focus:bg-white`.
+- **Segmented Chips / Tabs**: `rounded-xl bg-sand-200/80 p-1 flex gap-1` with `rounded-lg bg-white shadow-sm` active item.
+- **Frosted Glass Containers**: `bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10`.
+- **Floating Pill Dock**: `rounded-full bg-white/95 backdrop-blur-md shadow-pill-dock border border-black/[0.04] px-5 py-3`.
+
+---
+
+## 💡 How AI Agents Apply SandSquircle to Different App Types
+
+| App Domain | Custom Layout Strategy (DO NOT copy money manager) | SandSquircle Style Pillars Applied |
+| :--- | :--- | :--- |
+| **E-Commerce Storefront** | Grid of products, filter sidebar, cart drawer, checkout stepper | Product cards use `rounded-[26px]` + `shadow-soft-card`. Primary CTA `"Add to Bag"` is Charcoal-900. Stock badge uses `emeraldMint`. |
+| **Social / Community Chat** | Channel sidebar, message stream, compose box, profile modal | Chat bubbles use `rounded-2xl` in white and charcoal. Avatars use `22% squircle`. Unread counts use `teal-600` badge. |
+| **Developer Tools / SaaS** | Multi-column console, API key tables, dark code snippets | Code blocks use Dark Hero gradient (`rounded-2xl`). Copy buttons use circular icon style. Server status uses 6px dot badge. |
+| **Fitness / Health Tracker** | Workout calendar, streak counters, exercise list, metric graphs | Daily streak hero card (`rounded-[28px]`). Rest day badge uses `amberSand`. Circular checkmark buttons for completed sets. |
+| **Music / Audio Streaming** | Playlist grid, track list rows, bottom now-playing pill bar | Floating pill dock functions as the audio player bar. Play/Pause FAB uses Charcoal-900 with `ring-4 ring-sand-100`. |
 
 ---
 
@@ -75,8 +139,9 @@ git clone https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git ~/.claude/
 *Or add to your project's `CLAUDE.md`:*
 ```markdown
 ## Design System
-Follow the SandSquircle UI skill instructions in `.agent/skills/sandsquircle/SKILL.md`.
-Always use Warm Sand (#F8F6F2) background, 26px soft-squircle cards, and Charcoal (#111827) typography.
+Follow the SandSquircle UI style system in `.agent/skills/sandsquircle/SKILL.md`.
+Extract ONLY the 5 style pillars (Button style, Colors, Theme, Card style, Subtle UI components).
+Do not copy the money manager demo layout; design custom layouts suited to this app.
 ```
 
 ---
@@ -88,7 +153,7 @@ Add SandSquircle as a project rule:
 mkdir -p .cursor/rules
 curl -fsSL https://raw.githubusercontent.com/akbar-shaik/SandSquircle-UI-SKILL-AI/main/SKILL.md -o .cursor/rules/sandsquircle.mdc
 ```
-Cursor automatically discovers and activates the skill whenever you mention UI redesigns, cards, or SandSquircle.
+Cursor automatically discovers and activates the skill whenever you mention styling, cards, buttons, or SandSquircle.
 
 ---
 
@@ -108,111 +173,25 @@ Clone the skill into your project root:
 git clone https://github.com/akbar-shaik/SandSquircle-UI-SKILL-AI.git .agent/skills/sandsquircle
 ```
 Then instruct the agent:
-> *"Read `.agent/skills/sandsquircle/SKILL.md` and use the SandSquircle UI design system for this task."*
+> *"Read `.agent/skills/sandsquircle/SKILL.md` and style this application using the 5 SandSquircle style pillars (buttons, colors, theme, cards, subtle UI)."*
 
 ---
 
-## 📱 Multi-Platform Architecture
+## 📱 Multi-Platform Implementation References
 
-| Target Platform | Technology | Reference Implementation |
+| Platform / Framework | Tech Stack | Reference Implementation |
 | :--- | :--- | :--- |
 | **Modern WebUI** | React / Next.js / Vue / Svelte / Tailwind | [`references/tailwind.config.js`](references/tailwind.config.js) & [`references/component-recipes.tsx`](references/component-recipes.tsx) |
 | **Vanilla Web** | HTML / HTMX / PHP / Django / Rails | [`references/sandsquircle-tokens.css`](references/sandsquircle-tokens.css) |
 | **Android Native** | Kotlin / Jetpack Compose Material 3 | [`references/ComposeTheme.kt`](references/ComposeTheme.kt) |
 | **iOS Native** | Swift / SwiftUI (Continuous Squircles) | [`references/SandSquircleTheme.swift`](references/SandSquircleTheme.swift) |
-| **Cross-Platform Mobile** | React Native / Expo | [`references/ReactNativeTheme.ts`](references/ReactNativeTheme.ts) |
+| **Cross-Platform Mobile** | React Native & Expo | [`references/ReactNativeTheme.ts`](references/ReactNativeTheme.ts) |
 | **Cross-Platform Mobile** | Flutter (Material 3 ThemeData) | [`references/sand_squircle_theme.dart`](references/sand_squircle_theme.dart) |
-| **Desktop Web & Enterprise** | Multi-Column Dashboard / Electron / Tauri | [`references/component-recipes.tsx`](references/component-recipes.tsx) (`SandSquircleDesktopShell`) |
 | **Universal Design Tokens** | W3C DTCG Format (Figma / Tools) | [`references/tokens.json`](references/tokens.json) |
-
----
-
-## 🚀 Triggering the Skill in AI Prompts
-
-Once installed, use natural language triggers with your AI assistant:
-
-### WebUI & Single-Page Apps
-> *"Use the sandsquircle skill to design a fintech dashboard with TopBar, Light Hero Balance Card, and Floating Pill Dock in Next.js."*
-
-### Mobile Applications
-> *"Apply the SandSquircle SwiftUI theme from SandSquircleTheme.swift to my iOS banking app."*
->
-> *"Refactor my Android home screen with ComposeTheme.kt and Modifier.sandSquircleCard()."*
->
-> *"Scaffold a React Native screen using SandSquircleStyles and PressableScale."*
-
-### Desktop Web Apps & Admin Dashboards
-> *"Scaffold an enterprise admin portal using the SandSquircleDesktopShell with collapsible sidebar and SandSquircleStatGrid."*
-
----
-
-## 🎨 Color Palette & Design Tokens
-
-### 1. Sand Canvas Foundation
-| Token | Hex Value | Usage |
-| :--- | :--- | :--- |
-| `sand-50` | `#FBF9F6` | Form input backgrounds & sub-panels |
-| `sand-100` | `#F8F6F2` | **Primary Viewport / Screen Background** |
-| `sand-200` | `#F4EFEA` | Subtle dividers and pill tracks |
-| `sand-300` | `#EAE2D8` | Active borders and tab segments |
-| `sand-400` | `#D8CDC0` | Disabled borders & hairlines |
-
-### 2. Charcoal Ink Hierarchy
-| Token | Hex Value | Usage |
-| :--- | :--- | :--- |
-| `charcoal-900` | `#111827` | Primary typography, FAB, key CTAs |
-| `charcoal-800` | `#1F2937` | Dark card gradient termination |
-| `charcoal-700` | `#374151` | Section titles & form labels |
-| `charcoal-500` | `#6B7280` | Subtitles, timestamps & inactive icons |
-| `charcoal-200` | `#E5E7EB` | Hairline dividers |
-| `charcoal-100` | `#F3F4F6` | Pill backgrounds |
-
-### 3. Brand Teal & Semantic Status
-| Semantic Role | Text | Background | Border |
-| :--- | :--- | :--- | :--- |
-| **Brand Teal Accent** | `#0D9488` | `#F0FDFA` | `#CCFBF1` |
-| **Paid / Inflow (Emerald Mint)** | `#10B981` | `#ECFDF5` | `#D1FAE5` |
-| **Overdue / Outflow (Crimson Coral)** | `#EF4444` | `#FEF2F2` | `#FEE2E2` |
-| **Pending / Warning (Amber Sand)** | `#F59E0B` | `#FFFBEB` | `#FEF3C7` |
-
----
-
-## 📐 Corner Radius Hierarchy
-
-```
-┌──────────────────────────────────────────────┐
-│  Modals & Bottom Sheets: 32px (rounded-[32px])│
-│  ┌────────────────────────────────────────┐  │
-│  │ Dark Hero Cards: 28px (rounded-[28px]) │  │
-│  │  ┌──────────────────────────────────┐  │  │
-│  │  │ Primary Cards: 26px              │  │  │
-│  │  │  ┌────────────────────────────┐  │  │  │
-│  │  │  │ Mini-Cards: 22px           │  │  │  │
-│  │  │  │  ┌──────────────────────┐  │  │  │  │
-│  │  │  │  │ Rows/Inputs: 16px    │  │  │  │  │
-│  │  │  │  │  ┌────────────────┐  │  │  │  │  │
-│  │  │  │  │  │ Tabs: 12px     │  │  │  │  │  │
-│  │  │  │  │  └────────────────┘  │  │  │  │  │
-│  │  │  │  └──────────────────────┘  │  │  │  │
-│  │  │  └────────────────────────────┘  │  │  │
-│  │  └──────────────────────────────────┘  │  │
-│  └────────────────────────────────────────┘  │
-└──────────────────────────────────────────────┘
-  Floating Pill Dock & FAB: 9999px (rounded-full)
-  App Brand Icon: 22% (rounded-[22%])
-```
-
----
-
-## 🖥 Interactive Preview
-
-To run the interactive live preview:
-1. Double click [`examples/demo-preview.html`](examples/demo-preview.html) in any web browser.
-2. Experience live balance privacy toggling, category tabs, and animated bottom-sheet modals with zero build steps or npm installations.
 
 ---
 
 ## 📄 License
 
 Distributed under the [MIT License](LICENSE).
-Built with passion for autonomous AI agents and high-velocity product teams.
+Built for high-velocity software engineering and autonomous AI agent workflows.
