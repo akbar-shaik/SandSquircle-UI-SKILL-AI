@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/**
+ * SandSquircle UI - Standalone Design Tokens & Utility Classes
+ * Warm Sand & Charcoal Soft-Squircle Aesthetic
+ */
+
+:root {
+  /* Sand Canvas Foundation */
+  --ss-sand-50: #FBF9F6;
+  --ss-sand-100: #F8F6F2; /* Primary Canvas */
+  --ss-sand-200: #F4EFEA; /* Subtle Dividers */
+  --ss-sand-300: #EAE2D8; /* Active Borders / Tab Tracks */
+  --ss-sand-400: #D8CDC0; /* Muted Hairlines */
+
+  /* Charcoal Ink Hierarchy */
+  --ss-charcoal-100: #F3F4F6;
+  --ss-charcoal-200: #E5E7EB;
+  --ss-charcoal-400: #9CA3AF;
+  --ss-charcoal-500: #6B7280; /* Secondary Subtitles & Inactive Icons */
+  --ss-charcoal-700: #374151; /* Form Labels & Section Titles */
+  --ss-charcoal-800: #1F2937; /* Dark Hero Gradient End */
+  --ss-charcoal-900: #111827; /* Primary Headings, FAB & Main CTAs */
+
+  /* Brand Teal Accents */
+  --ss-teal-50: #F0FDFA;
+  --ss-teal-600: #0D9488; /* Active Nav & Accent Elements */
+  --ss-teal-700: #0F766E;
+
+  /* Semantic Status: Emerald Mint (Positive / Paid / Inflow) */
+  --ss-emerald-mint-text: #10B981;
+  --ss-emerald-mint-bg: #ECFDF5;
+  --ss-emerald-mint-border: #D1FAE5;
+
+  /* Semantic Status: Crimson Coral (Negative / Overdue / Outflow) */
+  --ss-crimson-coral-text: #EF4444;
+  --ss-crimson-coral-bg: #FEF2F2;
+  --ss-crimson-coral-border: #FEE2E2;
+
+  /* Semantic Status: Amber Sand (Pending / Partial / Warning) */
+  --ss-amber-sand-text: #F59E0B;
+  --ss-amber-sand-bg: #FFFBEB;
+  --ss-amber-sand-border: #FEF3C7;
+
+  /* Squircle Corner Radii */
+  --ss-radius-modal: 32px;
+  --ss-radius-hero: 28px;
+  --ss-radius-card: 26px;
+  --ss-radius-mini: 22px;
+  --ss-radius-squircle: 16px;
+  --ss-radius-chip: 12px;
+  --ss-radius-logo: 22%;
+  --ss-radius-pill: 9999px;
+
+  /* Ultra-Diffused Shadows */
+  --ss-shadow-soft-card: 0 10px 30px -4px rgba(0, 0, 0, 0.04);
+  --ss-shadow-soft-card-hover: 0 14px 34px -4px rgba(0, 0, 0, 0.07);
+  --ss-shadow-pill-dock: 0 20px 40px -6px rgba(0, 0, 0, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  --ss-shadow-elevated-fab: 0 12px 24px -4px rgba(17, 24, 39, 0.28);
+  --ss-shadow-modal-sheet: 0 25px 60px -12px rgba(0, 0, 0, 0.18);
+
+  /* Typography */
+  --ss-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Viewport Reset */
+body {
+  background-color: var(--ss-sand-100);
+  color: var(--ss-charcoal-900);
+  font-family: var(--ss-font-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   SandSquircle Ready-to-Use Utility Classes
+   ========================================================================== */
+
+/* Mobile-First App Shell */
+.ss-shell {
+  width: 100%;
+  max-width: 460px;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Primary White Squircle Card */
+.ss-card {
+  background-color: #FFFFFF;
+  border-radius: var(--ss-radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--ss-shadow-soft-card);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ss-card:hover {
+  box-shadow: var(--ss-shadow-soft-card-hover);
+}
+
+/* Dark Hero Gradient Card */
+.ss-card-dark {
+  background: linear-gradient(135deg, var(--ss-charcoal-900) 0%, var(--ss-charcoal-800) 100%);
+  color: #FFFFFF;
+  border-radius: var(--ss-radius-hero);
+  padding: 1.5rem;
+  box-shadow: 0 20px 35px -8px rgba(17, 24, 39, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Floating Pill Bottom Dock */
+.ss-pill-dock {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--ss-radius-pill);
+  padding: 0.75rem 1.25rem;
+  box-shadow: var(--ss-shadow-pill-dock);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 40;
+  box-sizing: border-box;
+}
+
+/* Floating Action Button (FAB) */
+.ss-fab {
+  margin-top: -1.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--ss-radius-pill);
+  background-color: var(--ss-charcoal-900);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ss-shadow-elevated-fab);
+  outline: 4px solid var(--ss-sand-100);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.ss-fab:hover {
+  background-color: var(--ss-charcoal-800);
+  transform: scale(1.04);
+}
+
+.ss-fab:active {
+  transform: scale(0.95);
+}
+
+/* Form Input Field */
+.ss-input {
+  width: 100%;
+  background-color: var(--ss-sand-50);
+  border: 1px solid var(--ss-sand-300);
+  border-radius: var(--ss-radius-squircle);
+  padding: 0.75rem 1rem;
+  font-family: var(--ss-font-sans);
+  font-size: 0.875rem;
+  color: var(--ss-charcoal-900);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ss-input:focus {
+  background-color: #FFFFFF;
+  border-color: var(--ss-charcoal-900);
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.ss-input::placeholder {
+  color: var(--ss-charcoal-400);
+}
+
+/* Primary Charcoal Button */
+.ss-btn-primary {
+  width: 100%;
+  background-color: var(--ss-charcoal-900);
+  color: var(--ss-sand-50);
+  border-radius: var(--ss-radius-squircle);
+  padding: 0.875rem 1.25rem;
+  font-family: var(--ss-font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.15);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.ss-btn-primary:hover {
+  background-color: var(--ss-charcoal-800);
+}
+
+.ss-btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Secondary Teal Button */
+.ss-btn-teal {
+  background-color: var(--ss-teal-600);
+  color: #FFFFFF;
+  border-radius: var(--ss-radius-squircle);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--ss-font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.ss-btn-teal:hover {
+  background-color: var(--ss-teal-700);
+}
+
+.ss-btn-teal:active {
+  transform: scale(0.98);
+}
+
+/* Tactile Spring Press Feedback */
+.ss-pressable {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ss-pressable:active {
+  transform: scale(0.97);
+}
+
+/* Semantic Status Badges */
+.ss-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--ss-radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ss-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.ss-badge-paid {
+  background-color: var(--ss-emerald-mint-bg);
+  color: var(--ss-emerald-mint-text);
+  border: 1px solid var(--ss-emerald-mint-border);
+}
+.ss-badge-paid .ss-badge-dot {
+  background-color: var(--ss-emerald-mint-text);
+}
+
+.ss-badge-unpaid {
+  background-color: var(--ss-crimson-coral-bg);
+  color: var(--ss-crimson-coral-text);
+  border: 1px solid var(--ss-crimson-coral-border);
+}
+.ss-badge-unpaid .ss-badge-dot {
+  background-color: var(--ss-crimson-coral-text);
+}
+
+.ss-badge-partial {
+  background-color: var(--ss-amber-sand-bg);
+  color: var(--ss-amber-sand-text);
+  border: 1px solid var(--ss-amber-sand-border);
+}
+.ss-badge-partial .ss-badge-dot {
+  background-color: var(--ss-amber-sand-text);
+}
